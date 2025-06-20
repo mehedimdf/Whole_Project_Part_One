@@ -1,0 +1,115 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [0.0.1] - 2025-05-31
+### Added
+- Landing Page Initialized
+
+### Changed
+
+
+### Fixed
+
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [0.0.2] - 2025-05-31
+### Added
+- Routing Impelemneted
+- Signup Page Impelemneted
+
+### Changed
+
+
+### Fixed
+
+## [0.0.3] - 2025-06-01
+### Added
+- Country Code Dropdown Impelemneted
+- Gitignore Added
+
+### Changed
+
+
+### Fixed
+
+## [0.0.4] - 2025-06-03
+### Added
+- Consumer Login Page Impelemneted
+
+### Changed
+
+
+### Fixed
+
+
+## [0.0.5] - 2025-06-04
+### Added
+- Consumer Profile Page Impelemneted
+
+### Changed
+
+
+### Fixed
+
+## [0.0.6] - 2025-06-10
+### Added
+- Consumer Order History Page Impelemneted
+
+### Changed
+
+
+### Fixed
+
+
+## [0.0.7] - 2025-06-12
+### Added
+- Consumer Product Search Page Impelemneted
+
+### Changed
+- Directory Structure Changed
+- Component Name Changed
+- README.md Updated
+
+
+### Fixed
+
+
+## [0.0.8] - 2025-06-14
+### Added
+- Subscription Email Component Added
+- Product Detail Page Impelemneted
+
+### Changed
+- Product Section Component Updated
+
+
+### Fixed
+
+## [0.0.9] - 2025-06-15
+### Added
+- Checkout Page Implemented
+
+### Changed
+
+
+### Fixed
+
+
+### Fixed
+
+## [0.1.0] - 2025-06-16
+### Added
+- Connected with backend for login page
+- Search Engine Added with react-select
+- Search Results in ProductSearch.jsx
+- Restritction in  Profile and Orderhistory for only created user
+
+
+### Changed
+- Product price is now showen
+
+### Fixed
