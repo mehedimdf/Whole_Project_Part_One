@@ -7,7 +7,7 @@ const ClientReviews = () => {
       name: 'Jenny Wilson',
       title: 'Customer',
       review: 'Pellentesque et magna consectetur vestibulum ante non amet. Quisque feugiat massa eget mi rutrum dignissim. Morbi interdum mollis faucibus dolor arcu et varius tellus. Sed risus et lorem libero varius tempor',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b9e5f92a?w=80&h=80&fit=crop&crop=face'
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face'
     },
     {
       id: 2,
