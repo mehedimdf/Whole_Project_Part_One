@@ -11,6 +11,8 @@ This project is a consumer-facing web application built with **React** and **Vit
 
 ## Getting Started
 
+<h1>Clone and npm install --legacy-peer-deps </h1>
+
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v22.16.0)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
