@@ -3,7 +3,8 @@ import { FaPaperPlane, FaFacebookF, FaInstagram, FaTelegramPlane } from 'react-i
 
 const NewsLetter = () => {
   return (
-    <div className="bg-gray-100 py-4 px-6 flex items-center justify-between container mx-auto min-h-32">
+<div className='bg-gray-50'>
+      <div className=" py-4 px-6 flex items-center justify-between container mx-auto min-h-32">
       {/* Left: Newsletter Text */}
       <h2 className="text-xl font-bold text-gray-900 whitespace-nowrap mr-4">
         Subscribe our Newsletter
@@ -41,6 +42,7 @@ const NewsLetter = () => {
         </a>
       </div>
     </div>
+</div>
   );
 };
 

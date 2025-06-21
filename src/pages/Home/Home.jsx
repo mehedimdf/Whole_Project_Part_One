@@ -2,7 +2,6 @@ import React from 'react';
 import HeroImg from '../../assets/hero.png';
 import Support from './Support';
 import { FiArrowRight } from 'react-icons/fi';
-import NewsLetter from '../../components/common/NewsLetter';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -32,7 +31,7 @@ const Home = () => {
 
       {/* Support Section */}
       <Support />
-      <NewsLetter />
+  
     </div>
   );
 };
