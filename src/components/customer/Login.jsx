@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-[45rem] flex items-center justify-center" style={{ backgroundColor: '#f5f5f5' }}>
+    <div className="min-h-[40rem] flex items-center justify-center" style={{ backgroundColor: '#f5f5f5' }}>
       <form onSubmit={handleSubmit} className="bg-white p-8 px-10 rounded-lg shadow-md w-full max-w-[30rem]">
         <h1 className="text-2xl font-bold text-center mb-6">Sign In</h1>
         
