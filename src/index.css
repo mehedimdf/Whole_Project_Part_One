@@ -1,2 +1,19 @@
 @import "tailwindcss";
 
+
+
+/* Tailwind Custom Bullet Pagination */
+.custom-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active.custom-bullet {
+  background-color: #22c55e; /* Green-500 */
+  width: 24px;
+  border-radius: 9999px;
+}
+
+
