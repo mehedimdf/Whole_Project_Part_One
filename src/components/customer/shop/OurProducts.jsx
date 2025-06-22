@@ -1,20 +1,15 @@
-import React, { useState } from 'react'
-import { SlHandbag } from "react-icons/sl"
-import { IoMdHeartEmpty } from "react-icons/io"
-import { MdOutlineRemoveRedEye } from "react-icons/md"
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Greenlettuce from "../../../assets/Shop/ourp8.png";
+import Bagun from "../../../assets/Shop/ourp5.png";
+import Eggplant from "../../../assets/Shop/eggplant.jpg";
+import Greenlchili from "../../../assets/Shop/ourp6.png";
+import Mango from "../../../assets/Shop/ourp2.png";
+import Tomato from "../../../assets/Shop/ourp3.png";
+import Cauliflower from "../../../assets/Shop/ourp1.png";
+import Apple from "../../../assets/Shop/ourp4.png";
+import ProductCard from '../../common/ProductCard';
 
-import Greenlettuce from "../../../assets/Shop/ourp8.png" 
-import Bagun from "../../../assets/Shop/ourp5.png" 
-import Eggplant from "../../../assets/Shop/eggplant.jpg" 
-import Greenlchili from "../../../assets/Shop/ourp6.png" 
-import Mango from "../../../assets/Shop/ourp2.png" 
-import Tomato from "../../../assets/Shop/ourp3.png" 
-import Cauliflower from "../../../assets/Shop/ourp1.png" 
-import Apple from "../../../assets/Shop/ourp4.png" 
-
-
-
-// Mock images - replace with your actual imports
 const productImages = {
   greenlettuce: Greenlettuce,
   bagun: Bagun,
@@ -24,31 +19,14 @@ const productImages = {
   tomatos: Tomato,
   mango: Mango,
   apple: Apple
-}
-
-// Simple star rating component since react-ratings isn't available
-const StarRating = ({ rating, maxRating = 5 }) => {
-  return (
-    <div className="flex items-center gap-1">
-      {[...Array(maxRating)].map((_, index) => (
-        <span
-          key={index}
-          className={`text-sm ${
-            index < rating ? 'text-orange-400' : 'text-gray-300'
-          }`}
-        >
-          ★
-        </span>
-      ))}
-    </div>
-  )
-}
+};
 
 const OurProducts = () => {
-  const [activeCategory, setActiveCategory] = useState('All')
-  
-  const categories = ['All', 'Vegetable', 'Fruit']
-  
+  const [activeCategory, setActiveCategory] = useState('All');
+  const navigate = useNavigate();
+
+  const categories = ['All', 'Vegetable', 'Fruit'];
+
   const products = [
     {
       id: 1,
@@ -117,18 +95,19 @@ const OurProducts = () => {
       category: 'Vegetable',
       rating: 4
     }
-  ]
+  ];
 
-  const filteredProducts = activeCategory === 'All' || activeCategory === 'View All' 
-    ? products 
-    : products.filter(product => product.category === activeCategory)
+  const filteredProducts =
+    activeCategory === 'All' ? products : products.filter(p => p.category === activeCategory);
+
+  const handleNavigate = (id) => {
+    navigate(`/productdetails/${id}`);
+  };
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
-      {/* Header */}
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Introducing Our Products</h2>
-        
         {/* Category Tabs */}
         <div className="flex flex-wrap justify-center gap-6 mb-8">
           {categories.map((category) => (
@@ -147,59 +126,18 @@ const OurProducts = () => {
         </div>
       </div>
 
-      {/* Products Grid */}
+      {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="group relative bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-            {/* Sale Badge */}
-            {product.sale && (
-              <div className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded z-10">
-                Sale {product.discount}
-              </div>
-            )}
-            
-            {/* Action Icons */}
-            <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-              <button className="p-2 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors">
-                <IoMdHeartEmpty className="w-4 h-4 text-gray-600" />
-              </button>
-              <button className="p-2 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors">
-                <MdOutlineRemoveRedEye className="w-4 h-4 text-gray-600" />
-              </button>
-            </div>
-
-            {/* Product Image */}
-            <div className="aspect-square overflow-hidden bg-gray-50">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            {/* Product Info */}
-            <div className="p-4">
-              <h3 className="text-sm font-medium text-gray-800 mb-2">{product.name}</h3>
-              
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-lg font-semibold text-gray-900">${product.price}</span>
-                {product.originalPrice && (
-                  <span className="text-sm text-gray-500 line-through">${product.originalPrice}</span>
-                )}
-              </div>
-
-              <div className="flex items-center justify-between">
-                <StarRating rating={product.rating} />
-                <button className="p-2 bg-gray-100 rounded-full hover:bg-green-100 transition-colors group">
-                  <SlHandbag className="w-4 h-4 text-gray-600 group-hover:text-green-600" />
-                </button>
-              </div>
-            </div>
-          </div>
+          <ProductCard
+            key={product.id}
+            product={product}
+            onNavigate={handleNavigate}
+          />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OurProducts
+export default OurProducts;

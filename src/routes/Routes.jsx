@@ -5,6 +5,11 @@ import NotFound from "../components/common/NotFound"
 import SignupC from "../components/customer/Signup";
 import LoginC from "../components/customer/Login";
 import Shop from "../pages/Shop/Shop";
+import ProductDetails from "../pages/Products/ProductDetails";
+import MyShoppingCart from "../pages/Mycart/Mycart";
+import MyWishlist from "../pages/Mycart/MyWishlist";
+import Category from "../pages/Category/Category";
+import CheckoutForm from "../pages/Checkout/Checkout";
 
 
 const router = createBrowserRouter([
@@ -27,111 +32,40 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignupC></SignupC>
-      }
-      // {
-      //   path: "/register",
-      //   element: <Register></Register>,
-      // },
-      // {
-      //   path: "/login",
-      //   element: <Login></Login>,
-      // },
-      // {
-      //   path: "/forgotpass",
-      //   element: <ForgotPass></ForgotPass>,
-      // },
-      // {
-      //   path: "/details/:_id",
-      //   element: (
-      //     <PrivateRoute>
-      //       <VisaDetails />
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/all-product",
-      //   element: <AllProducts />,
-      // },
-      // {
-      //   path: "/contact",
-      //   element: <ContactUs />,
-      // },
+      },
+      {
+        path: "productdetails/:id",
+        element: <ProductDetails></ProductDetails>
+      },
+      {
+        path: "mycart/:id",
+        element: <MyShoppingCart></MyShoppingCart>
+      },
+      {
+        path: "myWishlist/:id",
+        element: <MyWishlist></MyWishlist>
+      },
+// In your router.js file
+{
+  path: "category",
+  element: <Category />,
+  children: [
+    {
+      path: ":sorting?",
+      element: <Category />,
+    }
+  ]
+},
+{
+  path: "checkout",
+  element: <CheckoutForm></CheckoutForm>
+}
     ],
   },
   {
     path: "*",
     element: <NotFound></NotFound>,
   },
-  // {
-  //   path: "/dashboard",
-  //   element: (
-  //     <PrivateRoute>
-  //       <DashboardLayout></DashboardLayout>
-  //     </PrivateRoute>
-  //   ),
-  //   children: [
-  //     {
-  //       path: "",
-  //       element: <MyProfile></MyProfile>,
-  //     },
-  //     {
-  //       path: "addproduct",
-  //       element: <AddProduct></AddProduct>,
-  //     },
-  //     {
-  //       path: "myproducts",
-  //       element: <MyProducts></MyProducts>,
-  //     },
-  //     {
-  //       path: "my-profile",
-  //       element: <MyProfile></MyProfile>,
-  //     },
-  //     {
-  //       path: "payment",
-  //       element: <ProfilePayment></ProfilePayment>
-  //     },
-  //     {
-  //       path: 'update-profile',
-  //       element: <UpdateProfile></UpdateProfile>
-  //     },
-  //     {
-  //       path: 'pending-posts',
-  //       element: <PendingPosts></PendingPosts>
-  //     },
-  //     {
-  //       path: 'accepted-posts',
-  //       element: <AcceptedPosts></AcceptedPosts>
-  //     },
-  //     {
-  //       path: 'rejected-posts',
-  //       element: <RejectedPosts></RejectedPosts>
-  //     },
-  //     {
-  //       path: 'reported-posts',
-  //       element: <ReportedPosts></ReportedPosts>
-  //     },
-  //     {
-  //       path: 'all-users',
-  //       element: <AllUsers></AllUsers>
-  //     },
-  //     {
-  //       path: 'all-modetators',
-  //       element: <AllModerators></AllModerators>
-  //     },
-  //     {
-  //       path: 'all-admins',
-  //       element: <AllAdmins></AllAdmins>
-  //     },
-  //     {
-  //       path: 'statistics',
-  //       element: <Statistics></Statistics>
-  //     },
-  //     {
-  //       path: 'cupon',
-  //       element: <Coupon></Coupon>
-  //     }
-  //   ],
-  // },
 ]);
 
 export default router;

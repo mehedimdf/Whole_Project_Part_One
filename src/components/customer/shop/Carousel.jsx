@@ -15,23 +15,23 @@ const slides = [
   {
     img: fruitandvegiImg,
     discount: '60%',
-    title: 'Fruits & Veggies Combo',
+    title: 'Fruits & Veggies',
     subtitle: 'Shop all essentials in one basket – eat clean!',
-    link: '/shop/all',
+    link: '/category?&rating=1.0',
   },
   {
     img: fruitImg,
     discount: '70%',
-    title: 'Fresh & Healthy Organic Food',
+    title: 'Fresh & Healthy Organic Fruits',
     subtitle: 'Free shipping on all your order. we deliver, you enjoy',
-    link: '/shop/fruits',
+    link: '/category?category=fruits&rating=1.0',
   },
   {
     img: vegitableImg,
     discount: '50%',
     title: 'Green & Organic Vegetables',
     subtitle: 'Get fresh veggies at your doorstep daily!',
-    link: '/shop/vegetables',
+    link: '/category?category=vegetables&rating=1.0',
   },
 ];
 

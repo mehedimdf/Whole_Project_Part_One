@@ -3,6 +3,7 @@ import { FaArrowRight } from 'react-icons/fa'
 
 import manwithbuket from "../../../assets/Shop/manwithbuket.png"
 import fandv from "../../../assets/Shop/fruitsandvegi.png"
+import { Link } from 'react-router-dom'
 
 
 const Specialdeal = () => {
@@ -114,10 +115,12 @@ const Specialdeal = () => {
             </div>
 
             {/* Shop Now Button */}
+              <Link to="/category?rating=1.0">
             <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-200 flex items-center gap-2 mx-auto">
               Shop now
               <FaArrowRight className="w-4 h-4" />
             </button>
+              </Link>
           </div>
 
           {/* Right Image - Man with Basket */}

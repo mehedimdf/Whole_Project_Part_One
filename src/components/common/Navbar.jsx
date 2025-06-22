@@ -95,7 +95,7 @@ const Navbar = () => {
 <div className="flex items-center gap-4 text-xl text-gray-600">
   {/* Wishlist Icon Link */}
   <NavLink
-    to="/wishlist"
+    to="myWishlist/id"
     className={({ isActive }) =>
       `relative hover:text-green-600 ${isActive ? "text-green-600" : ""}`
     }
@@ -108,7 +108,7 @@ const Navbar = () => {
 
   {/* Cart Icon Link */}
   <NavLink
-    to="/cart"
+    to="mycart/id"
     className={({ isActive }) =>
       `relative flex items-center gap-5 hover:text-green-600 ${isActive ? "text-green-600" : ""}`
     }
